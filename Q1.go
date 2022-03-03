@@ -31,8 +31,11 @@ func main() {
 		arry1 := strings.Split(scanner.Text(), ",") //カンマ毎に分割して、{タイムスタンプ,アドレス,応答時間}として格納している
 
 		for i := 0; i < serverCount; i++ { //同じアドレスから連続でタイムアウトが出ていないかの確認
+			serverChecker = false
+
 			if arry1[1] == logData[i][1] {
 				serverChecker = true
+				break
 			}
 		}
 
@@ -52,6 +55,7 @@ func main() {
 
 				logData[i][0] = "" //タイムアウトしていたサーバーのタイムスタンプの初期化
 				logData[i][1] = "" //タイムアウトしていたサーバーのアドレスの初期化
+				serverChecker = false
 			}
 		}
 	}
