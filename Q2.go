@@ -68,7 +68,7 @@ func main() {
 					str := fmt.Sprintf("%014d", time1-time2)
 
 					fmt.Println(logData[i][1] + " Server failure")
-					fmt.Println(str)
+					fmt.Println(logData[i][1] + " Server failure period is " + str)
 
 					logData[i][0] = "" //タイムアウトしていたサーバーのタイムスタンプの初期化
 					logData[i][1] = "" //タイムアウトしていたサーバーのアドレスの初期化
